@@ -1,6 +1,14 @@
 // import logo from './logo.svg';
 // import './App.css';
 import Header from "./Header";
+import BeachesContainer from "./BeachesContainer";
+import BeachesTile from "./BeachesTile";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import SharkBar from "./SharkBar";
+import NavBar from "./NavBar";
+import Search from "./Search";
+import UserProfile from "./UserProfile";
 
 function App() {
   return (

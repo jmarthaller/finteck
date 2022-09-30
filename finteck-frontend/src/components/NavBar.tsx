@@ -2,14 +2,14 @@ import React from 'react';
 // import { NavLink } from 'react-router-dom';
 // import { useHistory } from "react-router-dom";
 
-function NavBar({ currentUser, resetCurrentUser }) {
+function NavBar() {
 
     // const history = useHistory();
 
-    function handleLogout() {
-      resetCurrentUser(null)
-    //   history.push("/");
-  }
+  //   function handleLogout() {
+  //     resetCurrentUser(null)
+  //   //   history.push("/");
+  // }
 
     return (
         "Hello from inside the navbar"

@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 // import { useHistory } from "react-router-dom";
 
-function Login({ setCurrentUser }) {
+function Login() {
   const [formData, setFormData] = useState({username: "", password: ""});
 
 //   const  history = useHistory()
 
 
-  function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  // function handleChange(e) {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // }
 
 
-  async function handleSubmit(e) {
-    e.preventDefault()
-    const response = await fetch(`${process.env.REACT_APP_RAILS_URL}/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-    })
-    const jsonify = await response.json()
-    setCurrentUser(jsonify);
-    // history.push("/");  
-  }
+  // async function handleSubmit(e) {
+  //   e.preventDefault()
+  //   const response = await fetch(`${process.env.REACT_APP_RAILS_URL}/login`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(formData),
+  //   })
+  //   const jsonify = await response.json()
+  //   setCurrentUser(jsonify);
+  //   // history.push("/");  
+  // }
  
   
     return (

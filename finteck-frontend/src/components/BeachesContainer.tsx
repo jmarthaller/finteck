@@ -5,7 +5,9 @@ import BeachesTile from './BeachesTile';
 function BeachesContainer() {
 
     return (
-        "Hello from the BeachesContainer"
+        <>
+            "Hello from the BeachesContainer"
+        </>
     )
 
 

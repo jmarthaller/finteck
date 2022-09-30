@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 
-function UserProfile({
-  currentUser,
-  setCurrentUser,
-  reviews,
-  onUpdateReview,
-  onDeleteReview,
-  onUpdateUserInfo,
-  friendshipsState,
-}) {
+function UserProfile() {
   const [canEditAccount, setCanEditAccount] = useState(false);
   const [canDeleteAccount, setCanDeleteAccount] = useState(false);
   const [username, setUsername] = useState("");
@@ -26,62 +18,62 @@ function UserProfile({
     setCanDeleteAccount(!canDeleteAccount);
   }
 
-  const reviewsByCurrentUser = reviews.filter((review) => {
-    return review.user_id === currentUser.id;
-  });
+  // const reviewsByCurrentUser = reviews.filter((review) => {
+  //   return review.user_id === currentUser.id;
+  // });
 
 
-  function handleNameChange(event) {
-    setUsername(event.target.value);
-  }
+  // function handleNameChange(event) {
+  //   setUsername(event.target.value);
+  // }
 
-  function handlePasswordChange(event) {
-    setPassword(event.target.value);
-  }
+  // function handlePasswordChange(event) {
+  //   setPassword(event.target.value);
+  // }
 
-  function handleAvatarChange(event) {
-    setAvatar(event.target.value);
-  }
+  // function handleAvatarChange(event) {
+  //   setAvatar(event.target.value);
+  // }
 
-  async function handleUpdateAccount(e) {
-    e.preventDefault();
+  // async function handleUpdateAccount(e) {
+  //   e.preventDefault();
 
-    const formData = {
-      username,
-      avatar,
-      password,
-      email: "putridpotatoesdummyuser@gmail.com",
-    };
+  //   const formData = {
+  //     username,
+  //     avatar,
+  //     password,
+  //     email: "putridpotatoesdummyuser@gmail.com",
+  //   };
 
-    const response = await fetch(
-      `${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}`,
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
-    const jsonify = await response.json();
-    onUpdateUserInfo(jsonify);
-    // history.push("/profile");
-    setAvatar("");
-    setUsername("");
-    setPassword("");
-    toggleEditProfile();
-  }
+  //   const response = await fetch(
+  //     `${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}`,
+  //     {
+  //       method: "PATCH",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     }
+  //   );
+  //   const jsonify = await response.json();
+  //   onUpdateUserInfo(jsonify);
+  //   // history.push("/profile");
+  //   setAvatar("");
+  //   setUsername("");
+  //   setPassword("");
+  //   toggleEditProfile();
+  // }
 
-  function handleDeleteAccount() {
-    fetch(`${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setCurrentUser(null);
-    // history.push("/");
-  }
+  // function handleDeleteAccount() {
+  //   fetch(`${process.env.REACT_APP_RAILS_URL}/users/${currentUser.id}`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   });
+  //   setCurrentUser(null);
+  //   // history.push("/");
+  // }
 
   return (
     // <div>
@@ -151,7 +143,9 @@ function UserProfile({
     //       </div>
     //     </div>
     //   ) : null}
+    <>
       "Hello from the UserProfile"
+    </>
   );
 }
 

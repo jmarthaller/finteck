@@ -6,7 +6,7 @@ function BeachesContainer() {
 
     return (
         <>
-            "Hello from the BeachesContainer"
+        "Hello from the BeachesContainer"
         </>
     )
 
@@ -14,4 +14,4 @@ function BeachesContainer() {
 }
 
 
-export default BeachesTile;
+export default BeachesContainer;

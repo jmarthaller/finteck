@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from "./Header";
-// import BeachesContainer from "./BeachesContainer";
+import BeachesContainer from "./BeachesContainer";
 import Search from "./Search";
 import UserProfile from "./UserProfile";
 
@@ -30,7 +30,7 @@ const App = () => {
       <Header /> 
       <Search /> 
       <UserProfile />
-      {/* <BeachesContainer /> */}
+      <BeachesContainer />
     </div>
   );
 }

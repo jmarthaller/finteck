@@ -5,7 +5,7 @@ import Search from "./Search";
 import UserProfile from "./UserProfile";
 
 const App = () => {
-  // check alt file for key
+  // key stored locally
   const NOAA_KEY = undefined;
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const App = () => {
       console.log(jsonifiedData);
     }
     fetchDataOnLaunch();
-  }, [])
+  }, [NOAA_KEY])
 
 
   return (

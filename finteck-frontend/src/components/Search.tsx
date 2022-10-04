@@ -5,7 +5,7 @@ import React from 'react';
 function Search() {
     return (
         <>
-            "Hello from the search bar"
+            Hello from the search bar |
         </>
         // <div className="search">
         //     <input

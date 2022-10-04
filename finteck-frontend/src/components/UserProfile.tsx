@@ -144,7 +144,7 @@ function UserProfile() {
     //     </div>
     //   ) : null}
     <>
-      "Hello from the UserProfile"
+      Hello from the UserProfile |
     </>
   );
 }

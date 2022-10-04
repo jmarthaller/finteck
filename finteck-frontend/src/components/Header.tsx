@@ -5,7 +5,7 @@ import React from 'react';
 function Header() {
     return (
         <>
-            "Hello from the header"
+            Hello from the header |
         </>
     )
 }

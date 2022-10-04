@@ -6,7 +6,8 @@ function BeachesContainer() {
 
     return (
         <>
-        "Hello from the BeachesContainer"
+            BeachesContainer |
+            <BeachesTile />
         </>
     )
 

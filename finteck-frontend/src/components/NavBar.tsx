@@ -12,7 +12,9 @@ function NavBar() {
   // }
 
     return (
-        "Hello from inside the navbar"
+      <>
+        NavBar
+      </>
       );
 }
 

@@ -35,7 +35,9 @@ function SignUp() {
 
 
   return (
-    "Hello from SignUp"
+    <>
+    SignUp
+    </>
 //     <div>
 
 //     <form  autoComplete="off" className="signup" onSubmit={handleSubmit}>

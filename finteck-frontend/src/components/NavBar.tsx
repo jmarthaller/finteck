@@ -1,4 +1,6 @@
 import React from 'react';
+import SignUp from './SignUp';
+import Login from './Login';
 // import { NavLink } from 'react-router-dom';
 // import { useHistory } from "react-router-dom";
 
@@ -13,7 +15,9 @@ function NavBar() {
 
     return (
       <>
-        NavBar
+        NavBar (signup and login conditionally rendered)
+        <SignUp />
+        <Login />
       </>
       );
 }

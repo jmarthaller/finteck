@@ -28,7 +28,9 @@ function Login() {
  
   
     return (
-        "Hello from inside the login component"
+      <>
+        Login
+      </>
         // <div >
         //   <form className="login" onSubmit={handleSubmit} autoComplete="off">
 

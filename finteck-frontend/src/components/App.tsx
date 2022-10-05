@@ -32,16 +32,20 @@ const App = () => {
     <div className="App">
       <Router>
         <Routes>
-          <Header /> 
           <Route>
+            <Header /> 
+          </Route>
+          <Route path='/signup'>
             <SignUp />
           </Route>
           <Route>
             <Login />
           </Route>
-          <Search /> 
-          <UserProfile />
-          <BeachesContainer />
+          <>
+            <Search /> 
+            <UserProfile />
+            <BeachesContainer />
+          </>
         </Routes>
       </Router>
     </div>

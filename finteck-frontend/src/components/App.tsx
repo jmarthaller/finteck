@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Header";
 import BeachesContainer from "./BeachesContainer";
 import Search from "./Search";
 import UserProfile from "./UserProfile";
+import SignUp from './SignUp';
+import Login from './Login';
 
 const App = () => {
   // key stored locally
@@ -28,10 +30,20 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header /> 
-      <Search /> 
-      <UserProfile />
-      <BeachesContainer />
+      <Router>
+        <Routes>
+          <Header /> 
+          <Route>
+            <SignUp />
+          </Route>
+          <Route>
+            <Login />
+          </Route>
+          <Search /> 
+          <UserProfile />
+          <BeachesContainer />
+        </Routes>
+      </Router>
     </div>
   );
 }

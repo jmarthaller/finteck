@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from "./Header";
 import BeachesContainer from "./BeachesContainer";
 import Search from "./Search";

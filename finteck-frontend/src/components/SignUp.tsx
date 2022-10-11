@@ -36,7 +36,7 @@ function SignUp() {
 
   return (
     <>
-    SignUp
+      SignUp
     </>
 //     <div>
 

@@ -8,8 +8,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 
 const App = () => {
-  // key stored locally
-  const NOAA_KEY = undefined;
+  const NOAA_KEY = undefined; // key stored locally
 
   useEffect(() => {
     const fetchDataOnLaunch = async () => {

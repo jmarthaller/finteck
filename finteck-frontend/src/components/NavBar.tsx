@@ -15,7 +15,6 @@ function NavBar() {
     return (
       <>
         NavBar (signup and login conditionally rendered)
-        
       </>
       );
 }

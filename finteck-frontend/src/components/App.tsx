@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./Header";
 import BeachesContainer from "./BeachesContainer";
@@ -8,6 +8,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 
 const App = () => {
+  const [backendData, setBackendData] = useState([])
   const NOAA_KEY = undefined; // key stored locally
 
   useEffect(() => {
@@ -26,10 +27,21 @@ const App = () => {
     fetchDataOnLaunch();
   }, [NOAA_KEY])
 
+  useEffect(() => {
+    const fetchBackendData = async () => {
+      const dataFromBackend = await fetch(`localhost:5000/record/`)
+      const jsonifiedBackendData = await dataFromBackend.json()
+
+      setBackendData(jsonifiedBackendData);
+    }
+    fetchBackendData();
+  }, [])
+
+  console.log(backendData)
 
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Routes>
           <Route>
             <Header /> 
@@ -46,7 +58,7 @@ const App = () => {
             <BeachesContainer />
           </>
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   );
 }

@@ -11,25 +11,25 @@ const App = () => {
   const [backendData, setBackendData] = useState([])
   const NOAA_KEY = undefined; // key stored locally
 
-  useEffect(() => {
-    const fetchDataOnLaunch = async () => {
-      const datasetData = await fetch(
-        `https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories?offset=20`,
-        {
-          headers: {
-            token: `${NOAA_KEY}`,
-          },
-        }
-      );
-      const jsonifiedData = await datasetData.json();
-      console.log(jsonifiedData);
-    }
-    fetchDataOnLaunch();
-  }, [NOAA_KEY])
+  // useEffect(() => {
+  //   const fetchDataOnLaunch = async () => {
+  //     const datasetData = await fetch(
+  //       `https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories?offset=20`,
+  //       {
+  //         headers: {
+  //           token: `${NOAA_KEY}`,
+  //         },
+  //       }
+  //     );
+  //     const jsonifiedData = await datasetData.json();
+  //     console.log(jsonifiedData);
+  //   }
+  //   fetchDataOnLaunch();
+  // }, [NOAA_KEY])
 
   useEffect(() => {
     const fetchBackendData = async () => {
-      const dataFromBackend = await fetch(`localhost:5000/record/`)
+      const dataFromBackend = await fetch(`http:localhost:5000/record/`)
       const jsonifiedBackendData = await dataFromBackend.json()
 
       setBackendData(jsonifiedBackendData);

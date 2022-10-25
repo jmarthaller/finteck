@@ -1,3 +1,4 @@
+const { application } = require("express");
 const express = require("express");
 
 // recordRoutes is an instance of the express router.
@@ -10,6 +11,10 @@ const dbo = require("../db/conn");
 
 // This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
+
+recordRoutes.route("/").get(function (req, res) {
+  res.send("Hello base route");
+});
 
 // This section will help you get a list of all the records.
 recordRoutes.route("/record").get(function (req, res) {
@@ -34,6 +39,7 @@ recordRoutes.route("/record/:id").get(function (req, res) {
 });
 
 // This section will help you create a new record.
+// DELETE
 recordRoutes.route("/record/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {

@@ -11,4 +11,4 @@ const postToAdd = async () => {
   const dataToDisplay = await postToAddEndpoint.json();
   return dataToDisplay;
 };
-export default postToAdd;
+// export default postToAdd;

@@ -1,6 +1,5 @@
 const { application } = require("express");
 const express = require("express");
-// const { postToAdd } = require("../testPost");
 
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.

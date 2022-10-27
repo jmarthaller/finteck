@@ -1,5 +1,6 @@
 const { application } = require("express");
 const express = require("express");
+// const { postToAdd } = require("../testPost");
 
 // recordRoutes is an instance of the express router.
 // We use it to define our routes.
@@ -48,6 +49,7 @@ recordRoutes.route("/beaches/add").post(function (req, response) {
     level: req.body.level,
   };
   db_connect.collection("beaches").insertOne(myobj, function (err, res) {
+    console.log(req.body);
     if (err) throw err;
     response.json(res);
   });

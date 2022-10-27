@@ -5,14 +5,14 @@ const client = new MongoClient(Db, {
   useUnifiedTopology: true,
 });
 
-var _db;
+let _db;
 
 module.exports = {
   connectToServer: function (callback) {
     client.connect(function (err, db) {
       if (db) {
         _db = db.db("beaches");
-        console.log("Successfully connected to MongoDB.");
+        console.log(`Successfully connected to MongoDB on beaches.`);
       }
       return callback(err);
     });

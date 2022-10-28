@@ -6,17 +6,14 @@ const express = require("express");
 // The router will be added as a middleware and will take control of requests starting with path /record.
 const recordRoutes = express.Router();
 
-// This will help us connect to the database
 const dbo = require("../db/conn");
 
-// This help convert the id from string to ObjectId for the _id.
 const ObjectId = require("mongodb").ObjectId;
 
 recordRoutes.route("/").get(function (req, res) {
   res.send("Hello from backend base");
 });
 
-// This section will help you get a list of all the records.
 recordRoutes.route("/beaches").get(function (req, res) {
   let db_connect = dbo.getDb("beaches");
   db_connect
@@ -28,7 +25,6 @@ recordRoutes.route("/beaches").get(function (req, res) {
     });
 });
 
-// This section will help you get a single record by id
 recordRoutes.route("/beaches/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };
@@ -38,17 +34,15 @@ recordRoutes.route("/beaches/:id").get(function (req, res) {
   });
 });
 
-// This section will help you create a new record.
-// DELETE
 recordRoutes.route("/beaches/add").post(function (req, response) {
   let db_connect = dbo.getDb();
+  console.log(req.params);
   let myobj = {
     name: req.body.name,
     position: req.body.position,
     level: req.body.level,
   };
   db_connect.collection("beaches").insertOne(myobj, function (err, res) {
-    console.log(req.body);
     if (err) throw err;
     response.json(res);
   });
@@ -74,7 +68,6 @@ recordRoutes.route("/update/:id").post(function (req, response) {
     });
 });
 
-// This section will help you delete a record
 recordRoutes.route("/:id").delete((req, response) => {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };

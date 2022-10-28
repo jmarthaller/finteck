@@ -29,7 +29,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchBackendData = async () => {
-      const dataFromBackend = await fetch(`http:localhost:5000/record/`)
+      const dataFromBackend = await fetch(`http:localhost:5000/beaches`)
       const jsonifiedBackendData = await dataFromBackend.json()
 
       setBackendData(jsonifiedBackendData);

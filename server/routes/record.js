@@ -1,9 +1,6 @@
 const { application } = require("express");
 const express = require("express");
 
-// recordRoutes is an instance of the express router.
-// We use it to define our routes.
-// The router will be added as a middleware and will take control of requests starting with path /record.
 const recordRoutes = express.Router();
 
 const dbo = require("../db/conn");
@@ -36,7 +33,6 @@ recordRoutes.route("/beaches/:id").get(function (req, res) {
 
 recordRoutes.route("/beaches/add").post(function (req, response) {
   let db_connect = dbo.getDb();
-  console.log(req.params);
   let myobj = {
     name: req.body.name,
     position: req.body.position,
@@ -48,7 +44,6 @@ recordRoutes.route("/beaches/add").post(function (req, response) {
   });
 });
 
-// This section will help you update a record by id.
 recordRoutes.route("/update/:id").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myquery = { _id: ObjectId(req.params.id) };

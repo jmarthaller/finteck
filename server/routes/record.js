@@ -1,5 +1,6 @@
 const { application } = require("express");
 const express = require("express");
+var bodyParser = require("body-parser");
 
 const recordRoutes = express.Router();
 
@@ -32,11 +33,14 @@ recordRoutes.route("/beaches/:id").get(function (req, res) {
 });
 
 recordRoutes.route("/beaches/add").post(function (req, response) {
+  console.log(req.body);
   let db_connect = dbo.getDb();
   let myobj = {
     name: req.body.name,
     position: req.body.position,
     level: req.body.level,
+    confidenceScore: req.body.confidenceScore,
+    mapURL: req.body.mapURL,
   };
   db_connect.collection("beaches").insertOne(myobj, function (err, res) {
     if (err) throw err;

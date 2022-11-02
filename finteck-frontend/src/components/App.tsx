@@ -9,23 +9,6 @@ import Login from './Login';
 
 const App = () => {
   const [backendData, setBackendData] = useState([])
-  // const NOAA_KEY = undefined; // key stored locally
-
-  // useEffect(() => {
-  //   const fetchDataOnLaunch = async () => {
-  //     const datasetData = await fetch(
-  //       `https://www.ncei.noaa.gov/cdo-web/api/v2/datacategories?offset=20`,
-  //       {
-  //         headers: {
-  //           token: `${NOAA_KEY}`,
-  //         },
-  //       }
-  //     );
-  //     const jsonifiedData = await datasetData.json();
-  //     console.log(jsonifiedData);
-  //   }
-  //   fetchDataOnLaunch();
-  // }, [NOAA_KEY])
 
   useEffect(() => {
     const fetchBackendData = async () => {

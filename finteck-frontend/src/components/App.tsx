@@ -9,7 +9,7 @@ import Login from './Login';
 
 const App = () => {
   const [backendData, setBackendData] = useState([])
-  const NOAA_KEY = undefined; // key stored locally
+  // const NOAA_KEY = undefined; // key stored locally
 
   // useEffect(() => {
   //   const fetchDataOnLaunch = async () => {
@@ -37,28 +37,25 @@ const App = () => {
     fetchBackendData();
   }, [])
 
-  console.log(backendData)
+  console.log("Backend Data: ", backendData)
 
   return (
     <div className="App">
-      {/* <Router>
+      <Header /> 
+      <Router>
         <Routes>
-          <Route>
-            <Header /> 
-          </Route>
-          <Route path='/signup'>
-            <SignUp />
-          </Route>
-          <Route>
-            <Login />
-          </Route>
+          <Route path="/"  element={<BeachesContainer />} />
+          
+          <Route path='/signup' element={<SignUp />} />
+            {/* <SignUp /> */}
+          <Route path='./login' element={ <Login  />} />
+
+        </Routes>
           <>
             <Search /> 
             <UserProfile />
-            <BeachesContainer />
           </>
-        </Routes>
-      </Router> */}
+      </Router>
     </div>
   );
 }

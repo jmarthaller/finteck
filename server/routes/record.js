@@ -31,7 +31,7 @@ recordRoutes.route("/beaches/:id").get(function (req, res) {
     res.json(result);
   });
 });
-
+// curl -H "Content-Type: application/json" -d '{"name":"bolsa","position":"orange", "level": "standard"}' http://localhost:5000/beaches/add
 recordRoutes.route("/beaches/add").post(function (req, response) {
   console.log(req.body);
   let db_connect = dbo.getDb();

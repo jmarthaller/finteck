@@ -31,7 +31,7 @@ recordRoutes.route("/beaches/:id").get(function (req, res) {
     res.json(result);
   });
 });
-// curl -H "Content-Type: application/json" -d '{"name":"bolsa","position":"orange", "level": "standard"}' http://localhost:5000/beaches/add
+// curl -H "Content-Type: application/json" -d '{"name":"Bolsa Chica","position":"Orange County", "level": "Standard", "confidenceScore": 0.75, "mapSRCForIframe": "https://www.google.com/maps/embed/v1/place?q=the+wedge,+newport+beach,+ca&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"}' http://localhost:5000/beaches/add
 recordRoutes.route("/beaches/add").post(function (req, response) {
   console.log(req.body);
   let db_connect = dbo.getDb();
@@ -40,7 +40,7 @@ recordRoutes.route("/beaches/add").post(function (req, response) {
     position: req.body.position,
     level: req.body.level,
     confidenceScore: req.body.confidenceScore,
-    mapSRC: req.body.mapURL,
+    mapSRCForIframe: req.body.mapURL,
   };
   db_connect.collection("beaches").insertOne(myobj, function (err, res) {
     if (err) throw err;

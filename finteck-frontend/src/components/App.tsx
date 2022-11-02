@@ -29,9 +29,8 @@ const App = () => {
 
   useEffect(() => {
     const fetchBackendData = async () => {
-      const dataFromBackend = await fetch(`http:localhost:5000/beaches`)
+      const dataFromBackend = await fetch(`http://localhost:5000/beaches`)
       const jsonifiedBackendData = await dataFromBackend.json()
-
       setBackendData(jsonifiedBackendData);
     }
     fetchBackendData();
@@ -45,11 +44,8 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/"  element={<BeachesContainer />} />
-          
           <Route path='/signup' element={<SignUp />} />
-            {/* <SignUp /> */}
           <Route path='./login' element={ <Login  />} />
-
         </Routes>
           <>
             <Search /> 

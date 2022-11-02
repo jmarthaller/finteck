@@ -40,7 +40,7 @@ recordRoutes.route("/beaches/add").post(function (req, response) {
     position: req.body.position,
     level: req.body.level,
     confidenceScore: req.body.confidenceScore,
-    mapURL: req.body.mapURL,
+    mapSRC: req.body.mapURL,
   };
   db_connect.collection("beaches").insertOne(myobj, function (err, res) {
     if (err) throw err;

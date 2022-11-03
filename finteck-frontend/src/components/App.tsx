@@ -26,13 +26,14 @@ const App = () => {
       <Header /> 
       <Router>
         <Routes>
-          <Route path="/"  element={<BeachesContainer />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='./login' element={ <Login  />} />
+          <Route path="/"  element={<BeachesContainer />} />
+          <Route path="/profile" element={<UserProfile />} />
+            
         </Routes>
           <>
             <Search /> 
-            <UserProfile />
           </>
       </Router>
     </div>

@@ -23,16 +23,15 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header /> 
       <Router>
+      <Header /> 
         <Routes>
           <Route path='/signup' element={<SignUp />} />
           <Route path='./login' element={ <Login  />} />
-          <Route path="/"  element={<BeachesContainer />} />
           <Route path="/profile" element={<UserProfile />} />
-            
         </Routes>
           <>
+            <BeachesContainer />
             <Search /> 
           </>
       </Router>

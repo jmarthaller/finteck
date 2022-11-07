@@ -19,8 +19,6 @@ const App = () => {
     fetchBackendData();
   }, [])
 
-  console.log("Backend Data: ", backendData)
-
   return (
     <div className="App">
       <Router>

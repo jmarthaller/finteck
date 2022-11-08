@@ -1,12 +1,13 @@
 import React from 'react';
-import SharkBar from './SharkBar';
+// import SharkBar from './SharkBar';
 
-function BeachesTile() {
+function BeachesTile({ _id, name, position, level }: any) {
 
     return (
         <>
         BeachesTile |
-        <SharkBar />
+        <h1>{name}</h1>
+        <h3>{position}</h3>
         </>
     )
 

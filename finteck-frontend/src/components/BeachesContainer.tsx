@@ -1,10 +1,17 @@
 import React from 'react';
 import BeachesTile from './BeachesTile';
 
+interface beachesProps {
+    _id: string
+    name: string,
+    position: string,
+    level: string
+}
+
 
 function BeachesContainer({ beachesData }:any) {
 
-    const allBeaches = beachesData.map((beach: any) => {
+    const allBeaches = beachesData.map((beach: beachesProps) => {
         return <BeachesTile
         key={beach._id}
         name={beach.name}
@@ -16,7 +23,7 @@ function BeachesContainer({ beachesData }:any) {
     return (
         <>
             BeachesContainer | 
-            {/* {allBeaches} */}
+            {allBeaches}
         </>
     )
 

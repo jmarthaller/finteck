@@ -8,13 +8,13 @@ import SignUp from './SignUp';
 import Login from './Login';
 
 const App = () => {
-  const [backendData, setBackendData] = useState([])
+  const [beachesData, setBeachesData] = useState([])
 
   useEffect(() => {
     const fetchBackendData = async () => {
       const dataFromBackend = await fetch(`http://localhost:5000/beaches`)
       const jsonifiedBackendData = await dataFromBackend.json()
-      setBackendData(jsonifiedBackendData);
+      setBeachesData(jsonifiedBackendData);
     }
     fetchBackendData();
   }, [])
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/profile" element={<UserProfile />} />
         </Routes>
           <>
-            <BeachesContainer />
+            <BeachesContainer beachesData={beachesData}  />
             <Search /> 
           </>
       </Router>

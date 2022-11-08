@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react'
 import Header from "./Header";
 import BeachesContainer from "./BeachesContainer";
 import Search from "./Search";
@@ -28,20 +29,22 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <Router>
-      <Header /> 
-        <Routes>
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='./login' element={ <Login  />} />
-          <Route path="/profile" element={<UserProfile />} />
-        </Routes>
-          <>
-            <Search search={search} setSearch={setSearch} /> 
-            <BeachesContainer searchedBeaches={searchedBeaches}  />
-          </>
-      </Router>
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        <Router>
+        <Header /> 
+          <Routes>
+            <Route path='/signup' element={<SignUp />} />
+            <Route path='./login' element={ <Login  />} />
+            <Route path="/profile" element={<UserProfile />} />
+              <Route path='/' element={<BeachesContainer searchedBeaches={searchedBeaches} />}   />
+          </Routes>
+
+              <Search search={search} setSearch={setSearch} /> 
+        
+        </Router>
+      </div>
+    </ChakraProvider>
   );
 }
 

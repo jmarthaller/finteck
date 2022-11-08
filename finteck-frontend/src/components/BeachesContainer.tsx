@@ -26,7 +26,6 @@ function BeachesContainer({ beachesData }:any) {
 
     return (
         <>
-            BeachesContainer | 
             {allBeaches}
         </>
     )

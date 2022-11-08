@@ -5,7 +5,6 @@ function BeachesTile({ _id, name, position, level, confidenceScore, mapSRCForIfr
 
     return (
         <>
-        BeachesTile |
         <h1>{name}</h1>
         <h3>{position}</h3>
         <p>{confidenceScore}</p>

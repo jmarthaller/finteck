@@ -2,20 +2,20 @@ import React from 'react';
 
 
 
-function Search() {
+function Search({ search, setSearch }: any) {
+
     return (
         <>
-            Hello from the search bar |
+            <div className="search">
+                <input
+                type="text"
+                id="search"
+                placeholder="Search 🔎"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
+            </div>
         </>
-        // <div className="search">
-        //     <input
-        //     type="text"
-        //     id="search"
-        //     placeholder="Search 🔎"
-        //     value={search}
-        //     onChange={(e) => setSearch(e.target.value)}
-        //     />
-        // </div>
     );
 }
 

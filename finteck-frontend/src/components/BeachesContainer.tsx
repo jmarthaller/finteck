@@ -5,7 +5,9 @@ interface beachesProps {
     _id: string
     name: string,
     position: string,
-    level: string
+    level: string,
+    confidenceScore: number,
+    mapSRCForIframe: string | null,
 }
 
 
@@ -17,6 +19,8 @@ function BeachesContainer({ beachesData }:any) {
         name={beach.name}
         position={beach.position}
         level={beach.level}
+        confidenceScore={beach.confidenceScore}
+        mapSRCForIframe={beach.mapSRCForIframe}
         />
     })
 

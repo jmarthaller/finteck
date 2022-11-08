@@ -29,8 +29,8 @@ const App = () => {
           <Route path="/profile" element={<UserProfile />} />
         </Routes>
           <>
-            <BeachesContainer beachesData={beachesData}  />
             <Search /> 
+            <BeachesContainer beachesData={beachesData}  />
           </>
       </Router>
     </div>

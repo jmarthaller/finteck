@@ -1,13 +1,15 @@
 import React from 'react';
 // import SharkBar from './SharkBar';
 
-function BeachesTile({ _id, name, position, level }: any) {
+function BeachesTile({ _id, name, position, level, confidenceScore, mapSRCForIframe }: any) {
 
     return (
         <>
         BeachesTile |
         <h1>{name}</h1>
         <h3>{position}</h3>
+        <p>{confidenceScore}</p>
+        <iframe src={mapSRCForIframe}></iframe>
         </>
     )
 

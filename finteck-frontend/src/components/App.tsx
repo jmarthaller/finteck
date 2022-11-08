@@ -8,7 +8,8 @@ import SignUp from './SignUp';
 import Login from './Login';
 
 const App = () => {
-  const [beachesData, setBeachesData] = useState([])
+  const [beachesData, setBeachesData] = useState<any[]>([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const fetchBackendData = async () => {
@@ -18,6 +19,13 @@ const App = () => {
     }
     fetchBackendData();
   }, [])
+
+
+  const searchedBeaches = beachesData.filter((beach) => {
+    return beach.name.toLowerCase().includes(search.toLowerCase());
+  })
+
+
 
   return (
     <div className="App">
@@ -29,8 +37,8 @@ const App = () => {
           <Route path="/profile" element={<UserProfile />} />
         </Routes>
           <>
-            <Search /> 
-            <BeachesContainer beachesData={beachesData}  />
+            <Search search={search} setSearch={setSearch} /> 
+            <BeachesContainer searchedBeaches={searchedBeaches}  />
           </>
       </Router>
     </div>

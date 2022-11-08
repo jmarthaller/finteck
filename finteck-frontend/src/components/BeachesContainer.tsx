@@ -11,9 +11,9 @@ interface beachesProps {
 }
 
 
-function BeachesContainer({ beachesData }:any) {
+function BeachesContainer({ searchedBeaches }:any) {
 
-    const allBeaches = beachesData.map((beach: beachesProps) => {
+    const allBeaches = searchedBeaches.map((beach: beachesProps) => {
         return <BeachesTile
         key={beach._id}
         name={beach.name}

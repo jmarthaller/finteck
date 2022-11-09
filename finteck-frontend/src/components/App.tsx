@@ -31,7 +31,7 @@ const App = () => {
   return (
     
       <div className="App">
-        <Box bg='navy' w='100%' h='100%' p={4} color='white'>
+        <Box bg='#254E81' w='100%' h='100%' p={4} color="white">
           <Router>
           <Header /> 
             <Routes>
@@ -40,9 +40,7 @@ const App = () => {
               <Route path="/profile" element={<UserProfile />} />
                 <Route path='/' element={<BeachesContainer searchedBeaches={searchedBeaches} />}   />
             </Routes>
-
-                <Search search={search} setSearch={setSearch} /> 
-          
+                <Search search={search} setSearch={setSearch} />
           </Router>
         </Box>
       </div>

@@ -31,7 +31,7 @@ const App = () => {
   return (
     
       <div className="App">
-        <Box bg='#254E81' w='100%' h='100%' p={4} color="white">
+        <Box bg='#254E81' w='100%' h='12%' p={4} color="white">
           <Router>
           <Header /> 
             <Routes>

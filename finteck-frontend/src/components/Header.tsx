@@ -5,7 +5,6 @@ import NavBar from './NavBar'
 function Header() {
     return (
         <>
-            Hello from the header |
             <NavBar />
         </>
     )

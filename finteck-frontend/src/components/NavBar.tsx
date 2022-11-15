@@ -50,7 +50,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('gray.900', 'gray.700'),
     }}
     href={'#'}>
     {children}
@@ -117,8 +117,6 @@ export default function Simple() {
           </Box>
         ) : null}
       </Box>
-
-      <Box p={4}>Main Content Here</Box>
     </>
   );
 }

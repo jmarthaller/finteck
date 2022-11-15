@@ -1,26 +1,3 @@
-// import React from 'react';
-
-// // import { NavLink } from 'react-router-dom';
-// // import { useHistory } from "react-router-dom";
-
-// function NavBar() {
-
-//     // const history = useHistory();
-
-//   //   function handleLogout() {
-//   //     resetCurrentUser(null)
-//   //   //   history.push("/");
-//   // }
-
-//     return (
-//       <>
-//         NavBar (signup and login conditionally rendered)
-//       </>
-//       );
-// }
-
-// export default NavBar;
-
 import { ReactNode } from 'react';
 import {
   Box,
@@ -41,7 +18,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = ['Home', 'Favorites', 'Profile'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -52,7 +29,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       textDecoration: 'none',
       bg: useColorModeValue('gray.900', 'gray.700'),
     }}
-    href={'#'}>
+    href={`${children}`}>
     {children}
   </Link>
 );

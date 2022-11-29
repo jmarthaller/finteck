@@ -5,7 +5,7 @@ const dataModel = [
     position: "Orange County",
     level: "Standard",
     confidenceScore: 0.75,
-    mapSRCForIframe: null,
+    mapSRCForIframe: "https://stubbed_in_url.com",
   },
 ];
 
@@ -40,4 +40,6 @@ test("validates confidenceScore for beach data model", () => {
 
 test("validates iframe for beach data model", () => {
   expect(typeof dataModel[0].mapSRCForIframe).toBeTruthy();
+
+  expect(dataModel[0].mapSRCForIframe.length).toBeGreaterThan(0);
 });

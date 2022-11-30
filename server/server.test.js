@@ -9,6 +9,10 @@ const dataModel = [
   },
 ];
 
+test("validates that the data model is populated", () => {
+  expect(dataModel.length).toBeGreaterThan(0);
+});
+
 test("validates id for beach data model", () => {
   expect(dataModel[0]._id).not.toBeUndefined();
 });
